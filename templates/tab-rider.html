@@ -1,0 +1,16 @@
+<ion-header-bar align-title="center" class="bar-gray">
+  <div class="h1 title">user list</div>
+</ion-header-bar>
+<ion-view>
+  <ion-content ng-init="doRefreshRider()">
+    <ion-refresher pulling-text="loading" on-refresh="doRefreshRider()"></ion-refresher>
+    <ion-list>
+      <ion-item  class="item-remove-animate  item-icon-left" ng-repeat="user in users" >
+        <i class="icon ion-ios-person"></i>
+        <h2>{{user.userName}}</h2>
+        <p>( {{user.stationName}} )</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+

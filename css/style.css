@@ -1,0 +1,40 @@
+/* Empty. Add your own CSS if you like */
+#panel {
+            position: absolute;
+            background-color: white;
+            max-height: 90%;
+            overflow-y: auto;
+            bottom:20px;
+            width: 100%;
+            height:30%;
+        }
+.search {
+            position: absolute;
+            background-color: white;
+            overflow-y: auto;
+            top:10px;
+            left:30px;
+            width: 80%;
+            height:50px;
+        }
+.show  {
+     color:red;
+     margin-right:10px;
+}
+
+
+.list ion-item:nth-of-type(odd){ background:#FFFFFF;}
+.list ion-item:nth-of-type(even){ background:#F0F0F0;}
+
+#stationline      {
+
+  padding-right:0px;
+  padding-left:0px;
+
+ }
+
+.test {
+    margin-top:20px;
+    width : 150;
+    height : 150;
+  }

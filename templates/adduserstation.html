@@ -1,0 +1,50 @@
+<ion-header-bar align-title="center" class="bar-gray">
+  <div class="buttons">
+    <button class="button button-icon icon ion-arrow-left-c" ui-sref="tab.myinfo">
+    </button>
+  </div>
+  <div class="h1 title">添加乘车站点</div>
+  </ion-header-bar>
+<ion-view >
+  <ion-content>
+    <form name="adduser" novalidate="novalidate">
+      <div class="list list-inset">
+        <div class="item item-divider">
+          {{user.bankId}}
+          <!--<input type="text"  name="id" ng-model="m_user.bankId"  placeholder="BankId">-->
+        </div>
+        <div class="item item-divider">
+          {{user.userName}}
+        </div>
+        <!--<label class="item item-input">-->
+          <!--<input type="text"  name="name" ng-model="m_user.userName"  placeholder="Name">-->
+        <!--</label>-->
+        <div class="item item-input item-select">
+          <div class="input-label">
+            BusNumber
+          </div>
+          <!--<select ng-model="provinces.name"  ng-change="proToCity()">-->
+          <!--<option ng-repeat="pros in provinces" value="">{{pros.name}}-->
+          <!--</option>-->
+          <!--</select>-->
+          <select ng-model="addBusLines.busNo" ng-options="line.busNo for line in addBusLines" ng-change="ToStation()">
+            <option value=""></option>
+          </select>
+        </div>
+        <div class="item item-input item-select" >
+          <div class="input-label">
+            StationName
+          </div>
+          <select ng-model="m_stations.stationId" ng-options="station.stationName for station in m_stations" ng-change="getStation()">
+            <option value=""></option>
+
+            <!--<input value="{{city.stationId}}" ng-model="user.stationId"/>-->
+          </select>
+        </div>
+        <button class="button button-block button-calm" ng-click="addStation()">提交</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
+
+

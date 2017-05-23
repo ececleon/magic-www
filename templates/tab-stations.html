@@ -1,0 +1,24 @@
+<ion-header-bar align-title="center" class="bar-gray">
+  <div class="h1 title">station list</div>
+</ion-header-bar>
+<ion-view>
+  <ion-content ng-init="doRefreshStations()">
+    <ion-refresher pulling-text="loading" on-refresh="doRefreshStations()"></ion-refresher>
+    <ion-list>
+      <ion-item class="item-divider"  ng-repeat="stationLine in stationLines"  id="stationline"  type="item-text-wrap">
+        <div ng-click="getStations(stationLine)">{{stationLine.busNo}}   {{stationLine.busClient.busBrand}}  {{stationLine.busClient.busLicense}}  {{stationLine.busClient.driverName}} {{stationLine.busClient.seatCount}}person</div>
+    <ion-list ng-show="stationLine.show">
+      <ion-item class="item-icon-right" ng-repeat="station in stationLine.busStationClients" type="item-text-wrap" href="#/tab/stations/{{station}}">
+
+        <p>{{station.stationName}}  {{station.userList.totalUsers}}人</p>
+
+
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+
+      </ion-item>
+    </ion-list>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

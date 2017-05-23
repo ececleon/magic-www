@@ -1,0 +1,40 @@
+<ion-header-bar align-title="center" class="bar-gray">
+  <div class="buttons">
+    <button class="button button-icon icon ion-arrow-left-c" ui-sref="login">
+    </button>
+  </div>
+  <div class="h1 title">Register</div>
+</ion-header-bar>
+<ion-view view-title="Register" name="login-view">
+  <ion-content class="padding">
+
+    <form name="registerForm" novalidate>
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="tel"  name="id" ng-model="user.bankId" placeholder="BankId" required ng-minlength="7" ng-maxlength="7" ng-pattern="/^[0-9]*$/">
+          <span class="show" ng-show="registerForm.id.$dirty && registerForm.id.$invalid">*BankId仅为数字且能为7位 </span>
+        </label>
+
+        <label class="item item-input">
+          <input type="password" name="password" ng-model="user.password" placeholder="Password" required ng-minlength="1" ng-maxlength="15">
+          <span class="show" ng-show="registerForm.password.$dirty && registerForm.password.$invalid">*密码必须为6-15位</span>
+        </label>
+
+        <label class="item item-input">
+          <input type="password" name="repeatpassword" ng-model="repeatpassword"placeholder="Repeat Password" required ng-minlength="1" ng-maxlength="15">
+          <span class="show" ng-show="registerForm.password.$valid && repeatpassword!=user.password">*两次密码输入不一致</span>
+        </label>
+
+        <label class="item item-input">
+          <input type="text"  name="user" ng-model="user.userName" placeholder="userName" >
+        </label>
+
+      </div>
+    </form>
+    <button class="button button-block button-calm" ng-disabled="registerForm.id.$dirty && registerForm.id.$invalid || registerForm.password.$dirty && registerForm.password.$invalid || registerForm.password.$valid && repeatpassword!=user.password" ng-click="doRegister()">
+      提交
+    </button>
+
+  </ion-content>
+</ion-view>
+

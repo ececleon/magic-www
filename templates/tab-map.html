@@ -1,0 +1,30 @@
+<ion-header-bar align-title="center" class="bar-gray">
+  <div class="h1 title">station line</div>
+  <!--<div class="buttons">-->
+    <!--<button class="button no-animation button-icon icon ion-android-search">-->
+    <!--</button>-->
+    <!--<button class="button no-animation button-icon icon ion-android-add">-->
+    <!--</button>-->
+  <!--</div>-->
+</ion-header-bar>
+<ion-view>
+
+  <ion-content scroll="false">
+    <!--<div class="AMapArea" id="amap">-->
+    <div id="container"></div>
+    <div ng-init="onload_map()"></div>
+      <!--<div id="tool">-->
+        <!--<i class="icon ion-plus-round"></i>-->
+        <!--<br>-->
+        <!--<i class="icon ion-plus-round"></i>-->
+      <!--</div>-->
+      <div id="panel" ng-show="place.name!=null&&place.name!=''"></div>
+
+      <div class="search">
+        <input type="text" class="search"  placeholder="search place" ng-model="place.name" ng-change="checkText()"/>
+        <!--<button style="top:10px;right:30px" onClick="doMySearch()" >search</button>-->
+      </div>
+    <!--</div>-->
+  </ion-content>
+
+</ion-view>

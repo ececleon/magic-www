@@ -1,0 +1,44 @@
+<ion-header-bar align-title="center" class="bar-gray">
+  <div class="h1 title">my information</div>
+</ion-header-bar>
+<ion-view>
+  <ion-content>
+    <ion-list ng-if="user!=null">
+      <div class="item item-divider">
+        user information
+      </div>
+      <div class="item" >
+        {{user.userName}} bankId:{{user.bankId}} <img src="img/qrcode.png" style="width:20px;position: absolute;right:10px;"/>
+      </div>
+
+      <div  ng-show="user.stationId!=0">
+        <div class="item item-divider">
+          {{myStation.arriveTime}}
+        </div>
+        <div class="item">
+          {{myStation.stationName}}
+        </div>
+        <button class="button button-block button-calm" ng-click="addstation()">update bus station</button>
+      </div>
+
+
+
+      <div>
+      <button class="button button-block button-calm" ng-click="show()">antion sheet</button>
+      </div>
+
+      <div ng-hide="user.stationId!=0" >
+        <button class="button button-block button-calm" ng-click="addstation()">add station</button>
+      </div>
+      <button class="button button-block button-assertive" ng-click="showConfirm()">logout</button>
+
+    </ion-list>
+    <!--<div id="qrcode" class="test" align="center" ></div>-->
+    <!--<div ng-if="gQrcode()"></div>-->
+    <div ng-if="user==null">
+      <p>您还没有登录！请登录</p>
+      <button class="button button-block button-assertive" ui-sref="login">login</button>
+    </div>
+
+  </ion-content>
+</ion-view>
